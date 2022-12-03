@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-in</title>
+    <link rel="stylesheet" href="project.css">
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+</head>
+
+<body>
+    <div id='login-form' class='login-page'>
+        <div class="form-box">
+            <video autoplay muted loop id="myVideo">
+                <source src="11.mp4" type="video/mp4">
+            </video>
+            <div class='button-box'>
+                <div id='btn'></div>
+                <button type='button' onclick='login()' class='toggle-btn'>Log In</button>
+                <button type='button' onclick='register()' class='toggle-btn'>Register</button>
+            </div>
+            <form id='login' class='input-group-login' action="login.php"method="post">
+                <input type='text' class='input-field' placeholder='Email Id' required name="email">
+                <input type='password' class='input-field' placeholder='Enter Password' required name="pass">
+                <input type='checkbox' class='check-box'><span>Remember Password</span>
+                <button type='submit' class='submit-btn' name="submit">Log in</button>
+            </form>
+            <form id='register' class='input-group-register'action="register.php"method="post">
+                <input type='text' name="user"class='input-field' placeholder='Name' required>
+                <input type='email' name="mail"class='input-field' placeholder='Email Id' required>
+                <input type='password' name="pass"class='input-field' placeholder='Enter Password' required>
+                <input type='password' name="cpass"class='input-field' placeholder='Confirm Password' required>
+                <input type='checkbox' class='check-box'><span>I agree to the terms and conditions</span>
+                <button type='submit' class='submit-btn' name="submit">Register</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        var x = document.getElementById('login');
+        var y = document.getElementById('register');
+        var z = document.getElementById('btn');
+        function register() {
+            x.style.left = '-400px';
+            y.style.left = '50px';
+            z.style.left = '110px';
+        }
+        function login() {
+            x.style.left = '50px';
+            y.style.left = '450px';
+            z.style.left = '0px';
+        }
+    </script>
+    <script>
+        var modal = document.getElementById('login-form');
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#submit").click(function () {
+                $href = "playlist.html"
+            });
+        });
+    </script>
+</body>
+
+</html>
